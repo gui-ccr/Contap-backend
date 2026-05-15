@@ -72,5 +72,18 @@ src/
 
 ---
 
-### 💡 Dica do Mentor para o Time de Back-end:
+## 📁 Sobre os arquivos .gitkeep
+
+Você notará arquivos chamados `.gitkeep` em diversas pastas do projeto. 
+
+**Para que servem?**
+O Git, por padrão, não consegue rastrear ou "subir" pastas que estão totalmente vazias. Como nossa arquitetura foi planejada para ser **Feature-based** (baseada em funcionalidades), criamos a estrutura de pastas antecipadamente para organizar o trabalho do grupo. O `.gitkeep` é apenas um "espaço reservado" para garantir que a pasta exista no repositório de todos.
+
+**O que fazer com eles?**
+* **Não apague agora:** Mantenha o arquivo enquanto a pasta estiver vazia.
+* **Pode excluir depois:** Assim que você criar um arquivo real dentro da pasta (um componente, um serviço ou um hook), você **pode e deve** excluir o arquivo `.gitkeep`. Ele não é mais necessário quando a pasta já possui conteúdo.
+
+---
+
+### 💡 Dica do para o Time de Back-end:
 Como vocês são os guardiões da lógica, foquem em criar **Testes Unitários** para a função de balanceamento. No fluxo de demonstração final, o professor vai tentar lançar um débito sem crédito correspondente para ver o sistema "reclamar". Se o seu backend estiver bem blindado, o sistema passará com nota máxima.
