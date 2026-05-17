@@ -4,7 +4,8 @@
   "description": "Este repositório contém a **Camada de Negócio** do sistema ContaAp. Sua principal função é atuar como o cérebro contábil da aplicação, garantindo que todos os lançamentos financeiros da pizzaria sigam as normas técnicas de contabilidade.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tsx server.ts"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/gui-ccr/Contap-backend/issues"
   },
@@ -29,7 +30,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^25.8.0",
-    "tsx": "^4.22.0",
+    "tsx": "^4.22.1",
     "typescript": "^6.0.3"
   }
 }
