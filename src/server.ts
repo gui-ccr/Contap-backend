@@ -1,15 +1,31 @@
+import 'dotenv/config'
 import express, { type Response, type Request } from "express";
+import { supabase } from "./config/database.js";
 
 const app = express();
 const PORT = process.env.PORT || 3333;
 app.use(express.json());
 
-app.get("/ping", (req: Request, res: Response) => {
-  res.status(200).json({
-    status: "success",
-    message: "🍕 Servidor da Pizzaria Contábil está Online e Respirando!",
-  });
+app.get("/ping",async (req: Request, res: Response) => {
+  try {
+    const { data, error } = await supabase.from('empresas').select('*').limit(1)
+    
+    if (error) throw error
+
+    res.status(200).json({
+      status: 'success',
+      message: '🍕 Servidor Online e Banco de Dados Conectado com Sucesso!',
+      db_test: data
+    })
+  } catch (err: any) {
+    res.status(500).json({
+      status: 'error',
+      message: '❌ Servidor Online, mas falhou ao conectar no Supabase.',
+      detalhes: err.message
+    })
+  }
 });
+
 
 // aqui voces vao colocar as outras rotas como /contas /planoContasRoutes e etc
 
