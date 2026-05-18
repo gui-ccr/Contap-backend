@@ -45,3 +45,6 @@ describe("Ambiente de Testes da Pizzaria", () => {
     expect(usuario.id).toBeDefined()
   });
 });
+
+
+// para executar o teste vc digita 'npm test', e se vc quiser ir para o site e ter um detalhamento visual dos testes e so digitar 'npm run test:ui'
