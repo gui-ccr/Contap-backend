@@ -43,23 +43,16 @@ Para manter o código limpo e organizado (**Clean Code**), o backend está divid
 
 ```
 src/
-├── app/                  # Roteamento do Next.js (Páginas e Layouts)
-├── components/           # Componentes Globais e UI
-│   └── ui/               # Componentes do Shadcn (Button, Input, Card...)
-├── features/             # O Coração do Negócio (Feature-based)
-│   ├── auth/             # Login e Controle de Acesso
-│   ├── accounting/       # Lançamentos e Plano de Contas 
-│   │   ├── components/   # Forms de Lançamento, Tabela de Plano de Contas
-│   │   ├── hooks/        # Lógica de estado da contabilidade
-│   │   └── types.ts      # Definições de Débito/Crédito
-│   ├── reports/          # Balanço Patrimonial e DRE 
-│   │   └── components/   # Visualização de Relatórios e Gráficos
-│   └── dashboard/        # Resumo: Saldos e Índices de Liquidez 
-├── hooks/                # Hooks Genéricos (useLocalStorage, useDebounce)
-├── lib/                  # Configurações de Libs (supabase-client.ts, utils.ts)
-├── services/             # Chamadas de API (Integração com o Backend)
-├── types/                # Interfaces Globais do Sistema
-└── utils/                # Formatadores (BRL, Datas, Porcentagem)
+├── config/          # Conexão com Supabase e carregamento de variáveis de ambiente
+├── schemas/         # Regras de validação de entrada usando Zod (A nossa alfândega)
+├── domain/          # Interfaces, Tipos e Classes (O coração do sistema)
+├── mappers/         # Tradutores de dados (Converte de JSON para Classe e de Classe para DB)
+├── usecases/        # Regras de negócio, cálculos contábeis e validações lógicas
+├── controllers/     # Recebem a requisição (req), chamam o UseCase e devolvem a resposta (res)
+├── routes/          # Definição dos endpoints da API (O catálogo de endereços do Express)
+├── middlewares/     # Interceptadores (Tratamento de erros globais, Autenticação)
+├── utils/           # Funções reaproveitáveis (Formatadores de moeda, datas, etc.)
+└── server.ts        # Ponto de entrada (Inicialização do App Express)
 ```
 ---
 
